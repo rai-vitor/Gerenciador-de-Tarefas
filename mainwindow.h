@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QStandardItem>
 #include <QSplitter>
+#include <string>
 
 namespace Ui {
 class MainWindow;
