@@ -22,6 +22,7 @@ private:
     Ui::MainWindow *ui;
     QStandardItemModel *model;
     QSplitter *splitter;
+    float procTotal;
 
 };
 
