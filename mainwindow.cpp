@@ -3,16 +3,15 @@
 #include <QList>
 
 //Nossos Includes
-
+#include "thread.h"
+#include "graph.h"
 #include <iostream>
 #include <fstream>
 #include <string>
 
 using namespace std;
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
@@ -134,14 +133,11 @@ MainWindow::MainWindow(QWidget *parent) :
    // float a = qstr1.toFloat();
     //cout<<"Aque: "<<t.substr(0, strlen(pch)-3)<<endl;
     //float a = std::stof (t.substr(0, strlen(t)-3)) ; // Converti pra float
-    cout<<"Aqui: ";
-    qstr1 = qstr1.remove(-4,3);
 
+    qstr1 = qstr1.remove(-4,3);
     float procTotal = qstr1.toFloat();
-    cout<<procTotal;
 
     //Quantidade de Cores
-
     while ( fgets( buff, 256, cores ) != NULL ) {
      // cout << buff << endl;
     }
@@ -179,9 +175,6 @@ MainWindow::MainWindow(QWidget *parent) :
      pclose(memswap);
 
      /***************************************************************************/
-     while(true){
-
-     }
      //Processadores
      FILE *proc = popen("cat /proc/cpuinfo | grep 'MHz'","r");
 
@@ -209,11 +202,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
      procTotal = procTotal * 10000.0;
-     cout<<"Proc 1:"<<(proc1*100)/procTotal<<endl;
      ui->progressBar_1->setValue((proc1*100)/procTotal);
      ui->progressBar_2->setValue((proc2*100)/procTotal);
      ui->progressBar_3->setValue((proc3*100)/procTotal);
      ui->progressBar_4->setValue((proc4*100)/procTotal);
+
+     Graph *a = new Graph();
+     a->run();
  }
 
 MainWindow::~MainWindow()
