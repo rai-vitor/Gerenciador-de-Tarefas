@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 
     QList<QStandardItem *> listaItem;
-    listaItem << new QStandardItem("firefox");
+    listaItem << new QStandardItem("fire");
     listaItem << new QStandardItem("Parado");
     listaItem << new QStandardItem("1234");
     listaItem << new QStandardItem("20");
@@ -180,7 +180,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
      qstr = " ";
      list.clear();
-     while ( fgets( buff, 256, memram ) != NULL ) {
+     while ( fgets( buff, 256, proc ) != NULL ) {
          list.push_back(buff); // Cada linha tem um processador
      }
 
@@ -201,6 +201,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
      }
 
 
+
      procTotal = procTotal * 10000.0;
      ui->progressBar_1->setValue((proc1*100)/procTotal);
      ui->progressBar_2->setValue((proc2*100)/procTotal);
@@ -209,6 +210,34 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
      Graph *a = new Graph();
      a->run();
+     pclose(proc); // Não sei se devo fechar pq a thread vai ficar lendo o tempo todo
+
+     /*****************************************************************/
+     // Processos
+
+     FILE *ListaProcessos = popen("ps aux","r");
+
+     qstr = " ";
+     list.clear();
+     while ( fgets( buff, 256, ListaProcessos ) != NULL ) {
+         list.push_back(buff); // Cada linha tem um processo
+     }
+     cout<<endl;
+    // cout<<list[0].toStdString()<<endl;
+
+    QStringList processo;
+    for(int j = 0; j<list.size(); j++){
+        processo = list[j].split(" ");
+        int cont = 0;
+        for(int i = 0; i<processo.size(); i++){
+            if(processo[i].toStdString().length() != 0){ // Testo para saber se o valor é diferente de expaço
+                cont++;
+                // Descomente a linha abaixo para ver as informações do processo
+               // cout<<"I: "<<i<<" - "<<processo[i].toStdString()<<endl;
+            }
+        }
+        cout<<"J: "<<j<<" - "<<cont<<endl; // Se cont for 11 ou mais, então o processo é válido
+    }
  }
 
 MainWindow::~MainWindow()

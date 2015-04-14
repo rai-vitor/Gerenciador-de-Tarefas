@@ -9,7 +9,7 @@ class Graph : public Thread{
 public:
     Ui::MainWindow *ui;
     void run(){
-        //ui->progressBar_5->setValue(80); Aqui onde ta o erro
-        std::cout<<"Teste";
+        //ui->progressBar_5->setValue(80); //Aqui onde ta o erro
+        std::cout<<"Entrei na thread";
     }
 };
