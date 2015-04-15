@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -127,7 +127,7 @@
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -148,7 +148,7 @@
             <item row="0" column="0">
              <widget class="QProgressBar" name="progressBar_1">
               <property name="value">
-               <number>24</number>
+               <number>0</number>
               </property>
              </widget>
             </item>
@@ -164,7 +164,7 @@
             <item row="0" column="0">
              <widget class="QProgressBar" name="progressBar_2">
               <property name="value">
-               <number>24</number>
+               <number>0</number>
               </property>
              </widget>
             </item>
@@ -184,7 +184,7 @@
             <item row="0" column="0">
              <widget class="QProgressBar" name="progressBar_3">
               <property name="value">
-               <number>24</number>
+               <number>0</number>
               </property>
              </widget>
             </item>
@@ -200,7 +200,7 @@
             <item row="0" column="0">
              <widget class="QProgressBar" name="progressBar_4">
               <property name="value">
-               <number>24</number>
+               <number>0</number>
               </property>
              </widget>
             </item>
@@ -220,7 +220,7 @@
             <item row="0" column="0">
              <widget class="QProgressBar" name="progressBar_5">
               <property name="value">
-               <number>24</number>
+               <number>0</number>
               </property>
              </widget>
             </item>
@@ -236,7 +236,7 @@
             <item row="0" column="0">
              <widget class="QProgressBar" name="progressBar_6">
               <property name="value">
-               <number>24</number>
+               <number>0</number>
               </property>
              </widget>
             </item>
@@ -255,14 +255,17 @@
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>8</x>
+        <x>-2</x>
         <y>60</y>
-        <width>121</width>
+        <width>131</width>
         <height>51</height>
        </rect>
       </property>
       <property name="text">
        <string>Icone do Sistema</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="label_7">
@@ -270,7 +273,7 @@
        <rect>
         <x>140</x>
         <y>30</y>
-        <width>171</width>
+        <width>341</width>
         <height>16</height>
        </rect>
       </property>
@@ -381,7 +384,7 @@
      <string>Atualização</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -407,7 +410,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>

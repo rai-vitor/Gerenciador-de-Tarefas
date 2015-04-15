@@ -1,8 +1,6 @@
 #ifndef THREAD_H
 #define THREAD_H
-
-#include <QMainWindow>
-
+#include "ui_mainwindow.h"
 /*
   Class Thread e a classe base que devera ser herdada por outras classes
   c++ dicas: se em uma classe existir pelo menos um metodo virtual puro
@@ -30,7 +28,7 @@ public:
     virtual ~Thread();
 
     //Metodo virtual puro
-    virtual void run() = 0;
+    virtual void run(Ui::MainWindow *ui) = 0;
 
     //Metodo deve ser executado para iniciar a thread
     int start();

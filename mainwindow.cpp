@@ -176,41 +176,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
      /***************************************************************************/
      //Processadores
-     FILE *proc = popen("cat /proc/cpuinfo | grep 'MHz'","r");
 
-     qstr = " ";
-     list.clear();
-     while ( fgets( buff, 256, proc ) != NULL ) {
-         list.push_back(buff); // Cada linha tem um processador
-     }
-
-     float proc1 = 0;
-     float proc2 = 0;
-     float proc3 = 0;
-     float proc4 = 0;
-
-     QStringList processadores;
-     for(int i = 0; i<list.size(); i++){
-         qstr = list[i];
-         processadores = qstr.split(" ");
-         qstr = processadores[2];
-         if(i == 0) proc1 = qstr.toFloat();
-         if(i == 1) proc2 = qstr.toFloat();
-         if(i == 2) proc3 = qstr.toFloat();
-         if(i == 3) proc4 = qstr.toFloat();
-     }
-
-
-
-     procTotal = procTotal * 10000.0;
-     ui->progressBar_1->setValue((proc1*100)/procTotal);
-     ui->progressBar_2->setValue((proc2*100)/procTotal);
-     ui->progressBar_3->setValue((proc3*100)/procTotal);
-     ui->progressBar_4->setValue((proc4*100)/procTotal);
 
      Graph *a = new Graph();
-     a->run();
-     pclose(proc); // Não sei se devo fechar pq a thread vai ficar lendo o tempo todo
+     a->run(ui);
+     //pclose(proc); // Não sei se devo fechar pq a thread vai ficar lendo o tempo todo
 
      /*****************************************************************/
      // Processos
@@ -223,20 +193,23 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
          list.push_back(buff); // Cada linha tem um processo
      }
      cout<<endl;
-    // cout<<list[0].toStdString()<<endl;
 
-    QStringList processo;
+    QStringList processo; // Cada linha tem 1 proccesso do 'ps aux'
+    QVector<int> pid; //No final deste for, essa variavel terá todos os PID dos processos
     for(int j = 0; j<list.size(); j++){
         processo = list[j].split(" ");
         int cont = 0;
         for(int i = 0; i<processo.size(); i++){
             if(processo[i].toStdString().length() != 0){ // Testo para saber se o valor é diferente de expaço
                 cont++;
-                // Descomente a linha abaixo para ver as informações do processo
-               // cout<<"I: "<<i<<" - "<<processo[i].toStdString()<<endl;
+                if(cont == 2){// cont 1 = USER, cont 2 = PID
+                    if(processo[i].toInt()>0){
+                        pid.push_back(processo[i].toInt());
+                    }
+                    break;
+                }
             }
         }
-        cout<<"J: "<<j<<" - "<<cont<<endl; // Se cont for 11 ou mais, então o processo é válido
     }
  }
 

@@ -16,7 +16,8 @@ Thread::~Thread(){}
 void*
 Thread::funcaoHelper (void *param)
 {
-  ( (Thread*) param )->run();
+    Ui::MainWindow *ui;
+  ( (Thread*) param )->run(ui);
   return 0;
 }
 

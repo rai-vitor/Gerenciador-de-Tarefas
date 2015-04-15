@@ -1,15 +1,13 @@
 #include "thread.h"
 #include <iostream>
-#include <QMainWindow>
 #include "ui_mainwindow.h"
+#include <QMainWindow>
 
 
-class Graph : public Thread{
+class Graph{
 
 public:
     Ui::MainWindow *ui;
-    void run(){
-        //ui->progressBar_5->setValue(80); //Aqui onde ta o erro
-        std::cout<<"Entrei na thread";
-    }
+
+    void run(Ui::MainWindow *ui);
 };
