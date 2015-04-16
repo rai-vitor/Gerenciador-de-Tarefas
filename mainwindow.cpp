@@ -7,6 +7,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
@@ -54,9 +55,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->tableView->setSortingEnabled(true);
     ui->tableView->sortByColumn(4, Qt::AscendingOrder);
 
-    /* ------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------- */
 
-    //Sistema
+/********************************************** Sistema ********************************************************/
 
     string linha;
     QStringList list;
@@ -79,101 +80,120 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     //Informações do SO: Nome e Kernel
     char buff[256];
-    FILE *kernel = popen("uname -r","r");
-    FILE *Name = popen("cat /etc/*-release | grep 'PRETTY_NAME'", "r");
+    //FILE *kernel = popen("uname -r","r");
+    //FILE *Name = popen("cat /etc/*-release | grep 'PRETTY_NAME'", "r");
 
-    while ( fgets( buff, 256, kernel ) != NULL ) {
-      cout << "Kernel Version: " << buff << endl;
+    ifstream kernel;
+    system("uname -r > kernel.txt");
+    kernel.open("kernel.txt");
+    if(kernel.is_open()) {
+        getline(kernel, linha);
+        qstr = QString::fromStdString(linha);
+        ui->label_8->setText("Nome do Computador: " + qstr);
+        kernel.close();
     }
 
-    qstr = QString::fromStdString(buff);
-    ui->label_8->setText("Versão do Kernel: " + qstr);
-
-    while ( fgets( buff, 256, Name ) != NULL ) {
-    //  cout << buff << endl;
+    ifstream name;
+    system("cat /etc/*-release | grep 'PRETTY_NAME' > name.txt");
+    name.open("name.txt");
+    if(name.is_open()) {
+        getline(name, linha);
+        qstr = QString::fromStdString(linha);
+        list = qstr.split("=");
+        qstr = list[1];
+        ui->label_11->setText("Sistema Operacional: " + qstr);
+        name.close();
     }
 
-    //Dividindo a string do nome do sistema
-
-    qstr = " ";
-    qstr = QString::fromStdString(buff);
-    list = qstr.split("=");
-    qstr = list[1];
-
-   // cout << list[0] << endl;
-    ui->label_11->setText("Sistema Operacional: " + qstr);
-
-    pclose(kernel);
-    pclose(Name);
 
     /* ------------------------------------------------------------------------- */
 
-    //CPU model name
+    //CPU
 
 
-    FILE *cpu = popen("cat /proc/cpuinfo | grep -m 1 'model name'","r");
-    FILE *cores = popen("cat /proc/cpuinfo | grep processor | wc -l","r");
+    ifstream cpu;
+    system("cat /proc/cpuinfo | grep -m 1 'model name' > cpu.txt");
+    cpu.open("cpu.txt");
 
-    while ( fgets( buff, 256, cpu ) != NULL ) {
-     // cout << buff << endl;
+    ifstream cores;
+    system("cat /proc/cpuinfo | grep processor | wc -l > cores.txt");
+    cores.open("cores.txt");
+
+    if(cpu.is_open()) {
+        getline(cpu, linha);
+        qstr = QString::fromStdString(linha);
+        list = qstr.split(":");
+        qstr = list[1];
+        //list = qstr.split(" ");
+        //qstr = list[0];
+        cpu.close();
     }
 
-    //Dividindo a string do nome do sistema
-
-    qstr = " ";
-    qstr = QString::fromStdString(buff);
-    list = qstr.split(":");
-    qstr = list[1];
-    list = qstr.split(" ");
-    qstr1 = list[list.size()-1];
-
-    //string t = qstr1;
-
-   // float a = qstr1.toFloat();
-    //cout<<"Aque: "<<t.substr(0, strlen(pch)-3)<<endl;
-    //float a = std::stof (t.substr(0, strlen(t)-3)) ; // Converti pra float
-
-    qstr1 = qstr1.remove(-4,3);
-    float procTotal = qstr1.toFloat();
-
-    //Quantidade de Cores
-    while ( fgets( buff, 256, cores ) != NULL ) {
-     // cout << buff << endl;
+    if(cores.is_open()) {
+        getline(cores, linha);
+        qstr1 = QString::fromStdString(linha);
+        cores.close();
     }
 
+    //float procTotal = qstr1.toFloat();
+
+    ui->label_12->setText("Processador: " + qstr1 + "x " + qstr);
 
 
-    qstr1 = QString::fromStdString(buff);
-
-    ui->label_12->setText(qstr + "x" + qstr1);
-
-    pclose(cpu);
-    pclose(cores);
 
  /* ------------------------------------------------------------------------- */
 
      //Memória
 
-     FILE *memram = popen("cat /proc/meminfo | grep 'MemTotal'","r");
-     FILE *memswap = popen("cat /proc/meminfo | grep 'MemTotal'","r");
+     //FILE *memram = popen("cat /proc/meminfo | grep 'MemTotal'","r");
+     //FILE *memswap = popen("cat /proc/meminfo | grep 'MemTotal'","r");
 
-     while ( fgets( buff, 256, memram ) != NULL ) {
-       //cout << buff << endl;
+    double val;
+
+    ifstream memram;
+    system("cat /proc/meminfo | grep 'MemTotal' > memram.txt");
+    memram.open("memram.txt");
+
+    ifstream memswap;
+    system("cat /proc/meminfo | grep 'SwapTotal' > memswap.txt");
+    memswap.open("memswap.txt");
+
+    string str;
+
+     if(memram.is_open()) {
+         getline(memram, linha);
+         qstr = QString::fromStdString(linha);
+         list = qstr.split(":");
+         qstr = list[1];
+         list = qstr.split(" ");
+         qstr = list[8];
+         val = qstr.toDouble();
+         val /= 1000000;
+         val = floorf(val*100)/100;
+         qstr = QString::number(val);
+         memram.close();
+         ui->label_13->setText("Memória Primária: " + qstr + "GB");
      }
 
-     qstr = " ";
-     qstr = QString::fromStdString(buff);
-     list = qstr.split(":");
-     qstr = list[1];
-     list = qstr.split(" ");
-     qstr = list[0];
+     if(memswap.is_open()) {
+         getline(memswap, linha);
+         qstr = QString::fromStdString(linha);
+         list = qstr.split(":");
+         qstr = list[1];
+         list = qstr.split(" ");
+         qstr = list[7];
+         val = qstr.toDouble();
+         val /= 1000000;
+         val = floorf(val*100)/100;
+         qstr = QString::number(val);
+         memswap.close();
+         ui->label_14->setText("Memória Secundária: " + qstr + "GB");
+     }
 
-     ui->label_13->setText(qstr);
 
-     pclose(memram);
-     pclose(memswap);
 
-     /***************************************************************************/
+/* ----------------------------------------------------------------------------------------------------------- */
+
      //Processadores
 
 
