@@ -3,7 +3,6 @@
 #include <QList>
 
 //Nossos Includes
-#include "thread.h"
 #include "graph.h"
 #include <iostream>
 #include <fstream>
@@ -178,8 +177,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
      //Processadores
 
 
-     Graph *a = new Graph();
-     a->run(ui);
+     graph = new Graph();
+     connect(graph,SIGNAL(updateGUI(int)),SLOT(updateInterface(int)));
+    // graph->run();
      //pclose(proc); // Não sei se devo fechar pq a thread vai ficar lendo o tempo todo
 
      /*****************************************************************/
@@ -211,9 +211,21 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             }
         }
     }
+
+
  }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::updateInterface(int porcent){
+    ui->progressBar_1->setValue(porcent);
+    //cout<<porcent<<endl;
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    graph->run();
 }

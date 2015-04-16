@@ -1,10 +1,29 @@
 #include "graph.h"
 #include <iostream>
-#include "ui_mainwindow.h"
-#include <iostream>
-#include <fstream>
-#include <string>
-void Graph::run(Ui::MainWindow *ui){
+#include <QtCore>
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+Graph::Graph(){
+
+}
+
+void Graph::run(){
+
+
+    int i = 0;
+    while(true){
+        emit updateGUI(i);
+       // std::cout<<i;
+        i++;
+        if(i == 100){
+            i = 0;
+        }
+        sleep(1);
+    }
 
     QStringList list;
     char buff[512];
@@ -36,9 +55,13 @@ void Graph::run(Ui::MainWindow *ui){
 
     float procTotal = 2.2; // Depois vou pegar o valor real, isso aqui foi uma gambiarra, pq o valor real to outro arquivo
     procTotal = procTotal * 10000.0;
-    ui->progressBar_1->setValue((proc1*100)/procTotal);
+    /*ui->progressBar_1->setValue((proc1*100)/procTotal);
     ui->progressBar_2->setValue((proc2*100)/procTotal);
     ui->progressBar_3->setValue((proc3*100)/procTotal);
-    ui->progressBar_4->setValue((proc4*100)/procTotal);
+    ui->progressBar_4->setValue((proc4*100)/procTotal);*/
+
+}
+
+void Graph::finalizar(){
 
 }

@@ -1,13 +1,20 @@
-#include "thread.h"
-#include <iostream>
-#include "ui_mainwindow.h"
-#include <QMainWindow>
+#ifndef GRAPH_H
+#define GRAPH_H
+#include <QThread>
 
 
-class Graph{
+class Graph: public QThread{
+Q_OBJECT
 
 public:
-    Ui::MainWindow *ui;
+    Graph();
+    void run();
+    void finalizar();
 
-    void run(Ui::MainWindow *ui);
+
+signals:
+    void updateGUI(int);
 };
+
+
+#endif // GRAPH_H
