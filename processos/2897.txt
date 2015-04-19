@@ -1,0 +1,7 @@
+Name:	rtkit-daemon
+State:	S (sleeping)
+Pid:	2897
+PPid:	1
+Uid:	106	106	106	106
+Threads:	3
+voluntary_ctxt_switches:	23

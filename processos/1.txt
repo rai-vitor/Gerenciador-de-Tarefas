@@ -1,0 +1,7 @@
+Name:	init
+State:	S (sleeping)
+Pid:	1
+PPid:	0
+Uid:	0	0	0	0
+Threads:	1
+voluntary_ctxt_switches:	3850

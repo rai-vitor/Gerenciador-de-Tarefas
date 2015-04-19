@@ -1,0 +1,7 @@
+Name:	krfcommd
+State:	S (sleeping)
+Pid:	1116
+PPid:	2
+Uid:	0	0	0	0
+Threads:	1
+voluntary_ctxt_switches:	2

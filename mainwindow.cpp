@@ -8,6 +8,7 @@
 #include <fstream>
 #include <string>
 #include <cmath>
+#include <QDir>
 
 using namespace std;
 
@@ -27,16 +28,81 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 
     QList<QStandardItem *> listaItem;
-    listaItem << new QStandardItem("fire");
-    listaItem << new QStandardItem("Parado");
-    listaItem << new QStandardItem("1234");
-    listaItem << new QStandardItem("20");
-    listaItem << new QStandardItem("Ivanovitch");
-    listaItem << new QStandardItem("5");
-    listaItem << new QStandardItem("2345");
+    QStringList list, list_proc, list0;
+    QString qstr, qstr1, qstr_proc;
 
-    model->appendRow(listaItem);
-    listaItem.clear();
+    const char * c ;
+
+    string linha, str, path, _system;
+
+
+
+    system("ps -A -o pid > proc.txt");
+    ifstream proc, nome;
+    proc.open("proc.txt");
+    if(proc.is_open()) {
+        while (proc) {
+            for (int k = 0; getline(proc, str); ++k) {
+
+                str.erase(std::remove(str.begin(),str.end(),' '),str.end());
+
+                if(str != "PID") {                                      //pula a primeira linha
+
+                    qstr = QString::fromStdString(str);
+                   // cout << str.length() << endl;
+                    path = "/proc/" + str + "/status";
+                    _system = "grep -w 'Name\\|State\\|Pid\\|PPid\\|Uid\\|Threads\\|voluntary_ctxt_switches' " + path + " > processos/" + str + ".txt";
+                    //cout << _system << endl;
+                    c = _system.c_str();
+                    system(c);
+
+                    //Nome
+                    nome.open("processos/" + str + ".txt");
+                    if(nome.is_open()) {
+                        getline(nome, linha);
+                        //cout << linha << endl;
+                        qstr_proc = QString::fromStdString(linha);
+                        //list0 = qstr_proc.split(":");
+                        //cout << list0.length() << endl;
+                        //qstr_proc = list0[0];
+                        nome.close();
+                    }
+
+
+
+                    //process.open(path);
+
+                    list_proc.append(qstr);
+                    listaItem << new QStandardItem(qstr_proc);             //nome
+                    listaItem << new QStandardItem("Parado");           //status
+                    listaItem << new QStandardItem(list_proc[k-1]);     //pid
+                    listaItem << new QStandardItem("20");               //ppid
+                    listaItem << new QStandardItem("Ivanovitch");       //usuário
+                    listaItem << new QStandardItem("5");                //threads
+                    listaItem << new QStandardItem("2345");             //troca de contexto ?
+                    model->appendRow(listaItem);
+                    listaItem.clear();
+
+                   // process.close();
+
+                    ui->tableView->setModel(model);
+                    ui->tableView->setShowGrid(false);
+                    ui->tableView->setAlternatingRowColors(true);
+                    ui->tableView->verticalHeader()->setVisible(false);
+                    ui->tableView->setSortingEnabled(true);
+                    ui->tableView->sortByColumn(4, Qt::AscendingOrder);
+
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
+   /*
 
     listaItem << new QStandardItem("word");
     listaItem << new QStandardItem("Executando");
@@ -47,21 +113,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     listaItem << new QStandardItem("12345");
 
     model->appendRow(listaItem);
+*/
 
-    ui->tableView->setModel(model);
-    ui->tableView->setShowGrid(false);
-    ui->tableView->setAlternatingRowColors(true);
-    ui->tableView->verticalHeader()->setVisible(false);
-    ui->tableView->setSortingEnabled(true);
-    ui->tableView->sortByColumn(4, Qt::AscendingOrder);
 
 /* ----------------------------------------------------------------------------------------------------------- */
 
 /********************************************** Sistema ********************************************************/
 
-    string linha;
-    QStringList list;
-    QString qstr, qstr1;
+
 
     //Nome do Computador
     ifstream hostname;
@@ -158,8 +217,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ifstream memswap;
     system("cat /proc/meminfo | grep 'SwapTotal' > memswap.txt");
     memswap.open("memswap.txt");
-
-    string str;
 
      if(memram.is_open()) {
          getline(memram, linha);

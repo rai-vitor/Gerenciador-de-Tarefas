@@ -1,0 +1,7 @@
+Name:	sh
+State:	Z (zombie)
+Pid:	30845
+PPid:	30385
+Uid:	1000	1000	1000	1000
+Threads:	1
+voluntary_ctxt_switches:	2

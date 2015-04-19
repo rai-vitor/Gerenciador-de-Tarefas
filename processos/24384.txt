@@ -1,0 +1,7 @@
+Name:	view
+State:	S (sleeping)
+Pid:	24384
+PPid:	14192
+Uid:	1000	1000	1000	1000
+Threads:	1
+voluntary_ctxt_switches:	66

@@ -1,0 +1,7 @@
+Name:	ktorrent
+State:	S (sleeping)
+Pid:	2901
+PPid:	2360
+Uid:	1000	1000	1000	1000
+Threads:	5
+voluntary_ctxt_switches:	130836

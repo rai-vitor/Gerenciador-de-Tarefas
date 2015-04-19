@@ -1,0 +1,7 @@
+Name:	rcuos/3
+State:	S (sleeping)
+Pid:	11
+PPid:	2
+Uid:	0	0	0	0
+Threads:	1
+voluntary_ctxt_switches:	178368
