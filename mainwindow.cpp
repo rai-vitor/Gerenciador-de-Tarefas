@@ -190,7 +190,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
          ui->label_14->setText("Memória Secundária: " + qstr + "GB");
      }
 
+/* ----------------------------------------------------------------------------------------------------------- */
 
+     //logo
+
+        ui ->label_6->setPixmap(QPixmap("/usr/share/pixmaps/ubuntu-logo.png", 0, Qt::AutoColor));
 
 /* ----------------------------------------------------------------------------------------------------------- */
 
