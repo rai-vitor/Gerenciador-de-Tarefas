@@ -89,7 +89,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     if(kernel.is_open()) {
         getline(kernel, linha);
         qstr = QString::fromStdString(linha);
-        ui->label_8->setText("Nome do Computador: " + qstr);
+        ui->label_8->setText("Versão do Kernel: " + qstr);
         kernel.close();
     }
 
@@ -99,6 +99,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     if(name.is_open()) {
         getline(name, linha);
         qstr = QString::fromStdString(linha);
+        qstr = qstr.remove("\"");
         list = qstr.split("=");
         qstr = list[1];
         ui->label_11->setText("Sistema Operacional: " + qstr);
