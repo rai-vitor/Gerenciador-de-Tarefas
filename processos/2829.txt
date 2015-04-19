@@ -1,7 +1,0 @@
-Name:	kwin
-State:	S (sleeping)
-Pid:	2829
-PPid:	2825
-Uid:	1000	1000	1000	1000
-Threads:	3
-voluntary_ctxt_switches:	2707725

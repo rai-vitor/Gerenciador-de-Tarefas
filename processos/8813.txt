@@ -1,7 +1,0 @@
-Name:	dolphin
-State:	R (running)
-Pid:	8813
-PPid:	2683
-Uid:	1000	1000	1000	1000
-Threads:	4
-voluntary_ctxt_switches:	39446

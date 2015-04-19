@@ -1,7 +1,0 @@
-Name:	getty
-State:	S (sleeping)
-Pid:	2249
-PPid:	1
-Uid:	0	0	0	0
-Threads:	1
-voluntary_ctxt_switches:	2

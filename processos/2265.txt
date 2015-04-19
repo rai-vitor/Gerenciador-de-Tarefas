@@ -1,7 +1,0 @@
-Name:	libvirtd
-State:	S (sleeping)
-Pid:	2265
-PPid:	1
-Uid:	0	0	0	0
-Threads:	11
-voluntary_ctxt_switches:	272

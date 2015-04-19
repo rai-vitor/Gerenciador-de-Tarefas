@@ -1,7 +1,0 @@
-Name:	upstart-dbus-br
-State:	S (sleeping)
-Pid:	2535
-PPid:	2360
-Uid:	1000	1000	1000	1000
-Threads:	1
-voluntary_ctxt_switches:	16166
