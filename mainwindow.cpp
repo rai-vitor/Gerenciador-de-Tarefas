@@ -29,24 +29,26 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     QList<QStandardItem *> listaItem;
     QStringList list, list_proc, list0;
-    QString qstr, qstr1, qstr_nome, qstr_pid, qstr_ppid, qstr_state, qstr_user, qstr_thread, qstr_cnt;
-
+    QString qstr, qstr1, qstr_nome, qstr_pid, qstr_ppid, qstr_state, qstr_user, qstr_thread, qstr_cnt, display;
+    string linha, str, path, _system, username;
     const char * c ;
-
-    string linha, str, path, _system;
-
+    int count = 0;
 
 
-    system("ps -A -o pid > proc.txt");
-    ifstream proc, file;
+
+    system("ps -A -o pid > proc.txt && ps -A -o user > users.txt");
+    ifstream proc, file, user;
     proc.open("proc.txt");
-    if(proc.is_open()) {
-        while (proc) {
-            for (int k = 0; getline(proc, str); ++k) {
+    user.open("users.txt");
+    if(proc.is_open() && user.is_open()) {
+        while (proc && user) {
+            for (int k = 0; getline(proc, str) && getline(user, username); ++k) {
 
                 str.erase(std::remove(str.begin(),str.end(),' '),str.end());
 
                 if(str != "PID") {                                      //pula a primeira linha
+
+                    count = k;
 
                     qstr = QString::fromStdString(str);
                     path = "/proc/" + str + "/status";
@@ -89,21 +91,25 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                         qstr_ppid = qstr_ppid.trimmed();
                         file.close();
                     }
+
+
 /*
                     //User
-                    file.open("processos/" + str + ".txt");
+                    file.open("users.txt");
                     if(file.is_open()) {
-                        for(int j = 0; j < 5; ++j ) {
+                        //for(int j = 0; j < 5; ++j ) {
                             getline(file, linha);
-                        }
+                        //}
                         qstr_user = QString::fromStdString(linha);
-                        qstr_user.replace("Uid:", "");
-                        list0 = qstr_user.split("\t");
-                        qstr_user = list0[0];
+                        //qstr_user.replace("Uid:", "");
+                        //list0 = qstr_user.split("\t");
+                       // qstr_user.replace("\t","");
                         qstr_user = qstr_user.trimmed();
                         file.close();
                     }
+
 */
+                    qstr_user = QString::fromStdString(username);
 
                     //Threads
 
@@ -138,7 +144,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                     listaItem << new QStandardItem(qstr_state);           //status
                     listaItem << new QStandardItem(list_proc[k-1]);     //pid
                     listaItem << new QStandardItem(qstr_ppid);               //ppid
-                    listaItem << new QStandardItem("?");       //usuário
+                    listaItem << new QStandardItem(qstr_user);       //usuário
                     listaItem << new QStandardItem(qstr_thread);                //threads
                     listaItem << new QStandardItem(qstr_cnt);             //troca de contexto ?
                     model->appendRow(listaItem);
@@ -155,12 +161,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
                     }
                 }
+
+            //total de processos
+
+            display = QString::number(count);
+            ui->lcdNumber->display(display);
+
             }
         }
-
-
-
-
+    proc.close();
+    user.close();
 
 
    /*
