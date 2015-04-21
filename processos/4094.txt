@@ -1,7 +1,0 @@
-Name:	dhclient
-State:	S (sleeping)
-Pid:	4094
-PPid:	1121
-Uid:	0	0	0	0
-Threads:	1
-voluntary_ctxt_switches:	23

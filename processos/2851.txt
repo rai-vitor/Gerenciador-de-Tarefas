@@ -1,7 +1,0 @@
-Name:	dbus-daemon
-State:	Z (zombie)
-Pid:	2851
-PPid:	2503
-Uid:	1000	1000	1000	1000
-Threads:	1
-voluntary_ctxt_switches:	2

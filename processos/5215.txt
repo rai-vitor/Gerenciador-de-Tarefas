@@ -1,7 +1,0 @@
-Name:	qtcreator
-State:	S (sleeping)
-Pid:	5215
-PPid:	2989
-Uid:	1000	1000	1000	1000
-Threads:	7
-voluntary_ctxt_switches:	3750

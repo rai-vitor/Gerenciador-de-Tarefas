@@ -1,7 +1,0 @@
-Name:	cron
-State:	S (sleeping)
-Pid:	1411
-PPid:	1
-Uid:	0	0	0	0
-Threads:	1
-voluntary_ctxt_switches:	62

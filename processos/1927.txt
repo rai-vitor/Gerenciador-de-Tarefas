@@ -1,7 +1,0 @@
-Name:	apache2
-State:	S (sleeping)
-Pid:	1927
-PPid:	1
-Uid:	0	0	0	0
-Threads:	1
-voluntary_ctxt_switches:	8453

@@ -1,7 +1,0 @@
-Name:	mission-control
-State:	S (sleeping)
-Pid:	3147
-PPid:	2668
-Uid:	1000	1000	1000	1000
-Threads:	3
-voluntary_ctxt_switches:	1942

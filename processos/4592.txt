@@ -1,7 +1,0 @@
-Name:	chrome
-State:	S (sleeping)
-Pid:	4592
-PPid:	4113
-Uid:	1000	1000	1000	1000
-Threads:	15
-voluntary_ctxt_switches:	162620

@@ -1,7 +1,0 @@
-Name:	rsyslogd
-State:	S (sleeping)
-Pid:	1084
-PPid:	1
-Uid:	100	100	100	100
-Threads:	4
-voluntary_ctxt_switches:	3

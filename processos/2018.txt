@@ -1,7 +1,0 @@
-Name:	kerneloops
-State:	S (sleeping)
-Pid:	2018
-PPid:	1
-Uid:	105	105	105	105
-Threads:	1
-voluntary_ctxt_switches:	145

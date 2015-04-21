@@ -1,7 +1,0 @@
-Name:	irq/60-mei_me
-State:	S (sleeping)
-Pid:	439
-PPid:	2
-Uid:	0	0	0	0
-Threads:	1
-voluntary_ctxt_switches:	15

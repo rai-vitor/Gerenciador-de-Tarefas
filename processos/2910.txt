@@ -1,7 +1,0 @@
-Name:	gvfs-udisks2-vo
-State:	S (sleeping)
-Pid:	2910
-PPid:	2338
-Uid:	1000	1000	1000	1000
-Threads:	3
-voluntary_ctxt_switches:	43

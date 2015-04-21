@@ -1,7 +1,0 @@
-Name:	ksysguardd
-State:	S (sleeping)
-Pid:	2817
-PPid:	2803
-Uid:	1000	1000	1000	1000
-Threads:	1
-voluntary_ctxt_switches:	1602

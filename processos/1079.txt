@@ -1,7 +1,0 @@
-Name:	polkitd
-State:	S (sleeping)
-Pid:	1079
-PPid:	1
-Uid:	0	0	0	0
-Threads:	3
-voluntary_ctxt_switches:	463

@@ -1,7 +1,0 @@
-Name:	krunner
-State:	S (sleeping)
-Pid:	3169
-PPid:	2668
-Uid:	1000	1000	1000	1000
-Threads:	11
-voluntary_ctxt_switches:	2502

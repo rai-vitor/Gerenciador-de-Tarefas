@@ -1,7 +1,0 @@
-Name:	upstart-file-br
-State:	S (sleeping)
-Pid:	893
-PPid:	1
-Uid:	0	0	0	0
-Threads:	1
-voluntary_ctxt_switches:	1806

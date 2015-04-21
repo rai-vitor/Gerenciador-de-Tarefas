@@ -1,7 +1,0 @@
-Name:	gvfsd
-State:	S (sleeping)
-Pid:	3244
-PPid:	2668
-Uid:	1000	1000	1000	1000
-Threads:	2
-voluntary_ctxt_switches:	23

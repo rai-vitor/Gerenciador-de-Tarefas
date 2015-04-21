@@ -1,7 +1,0 @@
-Name:	deferwq
-State:	S (sleeping)
-Pid:	89
-PPid:	2
-Uid:	0	0	0	0
-Threads:	1
-voluntary_ctxt_switches:	2

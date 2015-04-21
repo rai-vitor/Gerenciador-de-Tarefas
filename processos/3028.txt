@@ -1,7 +1,0 @@
-Name:	untitled1
-State:	S (sleeping)
-Pid:	3028
-PPid:	2986
-Uid:	1000	1000	1000	1000
-Threads:	2
-voluntary_ctxt_switches:	456

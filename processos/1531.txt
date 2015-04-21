@@ -1,7 +1,0 @@
-Name:	php5-fpm
-State:	S (sleeping)
-Pid:	1531
-PPid:	1527
-Uid:	33	33	33	33
-Threads:	1
-voluntary_ctxt_switches:	1

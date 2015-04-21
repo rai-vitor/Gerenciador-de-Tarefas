@@ -1,7 +1,0 @@
-Name:	kworker/1:1H
-State:	S (sleeping)
-Pid:	702
-PPid:	2
-Uid:	0	0	0	0
-Threads:	1
-voluntary_ctxt_switches:	4808

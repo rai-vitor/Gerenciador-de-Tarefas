@@ -1,7 +1,0 @@
-Name:	kmix
-State:	S (sleeping)
-Pid:	2868
-PPid:	2355
-Uid:	1000	1000	1000	1000
-Threads:	3
-voluntary_ctxt_switches:	626

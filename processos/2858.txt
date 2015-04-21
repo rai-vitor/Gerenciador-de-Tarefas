@@ -1,7 +1,0 @@
-Name:	clementine
-State:	S (sleeping)
-Pid:	2858
-PPid:	2661
-Uid:	1000	1000	1000	1000
-Threads:	23
-voluntary_ctxt_switches:	317592

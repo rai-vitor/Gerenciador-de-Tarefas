@@ -1,7 +1,0 @@
-Name:	kglobalaccel
-State:	S (sleeping)
-Pid:	2683
-PPid:	2355
-Uid:	1000	1000	1000	1000
-Threads:	1
-voluntary_ctxt_switches:	957

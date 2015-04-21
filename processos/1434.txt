@@ -1,7 +1,0 @@
-Name:	cups-browsed
-State:	S (sleeping)
-Pid:	1434
-PPid:	1
-Uid:	0	0	0	0
-Threads:	1
-voluntary_ctxt_switches:	189

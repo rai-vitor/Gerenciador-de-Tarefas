@@ -1,7 +1,0 @@
-Name:	systemd-logind
-State:	S (sleeping)
-Pid:	1169
-PPid:	1
-Uid:	0	0	0	0
-Threads:	1
-voluntary_ctxt_switches:	147

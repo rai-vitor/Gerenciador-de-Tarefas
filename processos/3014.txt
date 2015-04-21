@@ -1,7 +1,0 @@
-Name:	kwrapper4
-State:	S (sleeping)
-Pid:	3014
-PPid:	2929
-Uid:	1000	1000	1000	1000
-Threads:	1
-voluntary_ctxt_switches:	3

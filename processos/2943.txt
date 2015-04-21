@@ -1,7 +1,0 @@
-Name:	kio_http
-State:	S (sleeping)
-Pid:	2943
-PPid:	2676
-Uid:	1000	1000	1000	1000
-Threads:	1
-voluntary_ctxt_switches:	10

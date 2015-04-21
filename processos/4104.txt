@@ -1,7 +1,0 @@
-Name:	cat
-State:	S (sleeping)
-Pid:	4104
-PPid:	4097
-Uid:	1000	1000	1000	1000
-Threads:	1
-voluntary_ctxt_switches:	1

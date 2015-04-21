@@ -1,7 +1,0 @@
-Name:	gnome-keyring-d
-State:	S (sleeping)
-Pid:	2541
-PPid:	2355
-Uid:	1000	1000	1000	1000
-Threads:	6
-voluntary_ctxt_switches:	156

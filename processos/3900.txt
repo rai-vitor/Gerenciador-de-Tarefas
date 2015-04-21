@@ -1,7 +1,0 @@
-Name:	gconfd-2
-State:	S (sleeping)
-Pid:	3900
-PPid:	2668
-Uid:	1000	1000	1000	1000
-Threads:	1
-voluntary_ctxt_switches:	159
