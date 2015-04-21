@@ -1,0 +1,7 @@
+Name:	polkit-kde-auth
+State:	S (sleeping)
+Pid:	2899
+PPid:	2355
+Uid:	1000	1000	1000	1000
+Threads:	2
+voluntary_ctxt_switches:	139

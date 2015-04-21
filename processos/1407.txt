@@ -1,0 +1,7 @@
+Name:	Xorg
+State:	S (sleeping)
+Pid:	1407
+PPid:	1342
+Uid:	0	0	0	0
+Threads:	2
+voluntary_ctxt_switches:	2762329

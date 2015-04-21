@@ -1,0 +1,7 @@
+Name:	colord
+State:	S (sleeping)
+Pid:	2694
+PPid:	1
+Uid:	113	113	113	113
+Threads:	3
+voluntary_ctxt_switches:	160

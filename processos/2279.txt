@@ -1,0 +1,7 @@
+Name:	dnsmasq
+State:	S (sleeping)
+Pid:	2279
+PPid:	1
+Uid:	119	119	119	119
+Threads:	1
+voluntary_ctxt_switches:	56

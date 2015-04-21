@@ -1,0 +1,7 @@
+Name:	kdm
+State:	S (sleeping)
+Pid:	1512
+PPid:	1342
+Uid:	0	0	0	0
+Threads:	1
+voluntary_ctxt_switches:	140

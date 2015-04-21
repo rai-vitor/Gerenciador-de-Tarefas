@@ -1,0 +1,7 @@
+Name:	kuiserver
+State:	S (sleeping)
+Pid:	3142
+PPid:	2668
+Uid:	1000	1000	1000	1000
+Threads:	1
+voluntary_ctxt_switches:	533

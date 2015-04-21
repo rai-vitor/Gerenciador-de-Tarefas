@@ -1,0 +1,7 @@
+Name:	kded4
+State:	S (sleeping)
+Pid:	2679
+PPid:	2355
+Uid:	1000	1000	1000	1000
+Threads:	7
+voluntary_ctxt_switches:	2032

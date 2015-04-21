@@ -1,0 +1,7 @@
+Name:	clementine-tagr
+State:	S (sleeping)
+Pid:	3226
+PPid:	3184
+Uid:	1000	1000	1000	1000
+Threads:	1
+voluntary_ctxt_switches:	17

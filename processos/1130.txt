@@ -1,0 +1,7 @@
+Name:	kworker/u9:0
+State:	S (sleeping)
+Pid:	1130
+PPid:	2
+Uid:	0	0	0	0
+Threads:	1
+voluntary_ctxt_switches:	12

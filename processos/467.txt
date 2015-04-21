@@ -1,0 +1,7 @@
+Name:	cfg80211
+State:	S (sleeping)
+Pid:	467
+PPid:	2
+Uid:	0	0	0	0
+Threads:	1
+voluntary_ctxt_switches:	2

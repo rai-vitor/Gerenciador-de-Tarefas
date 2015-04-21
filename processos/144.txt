@@ -1,0 +1,7 @@
+Name:	scsi_eh_3
+State:	S (sleeping)
+Pid:	144
+PPid:	2
+Uid:	0	0	0	0
+Threads:	1
+voluntary_ctxt_switches:	4

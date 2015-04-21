@@ -1,0 +1,7 @@
+Name:	upstart
+State:	S (sleeping)
+Pid:	2355
+PPid:	1673
+Uid:	1000	1000	1000	1000
+Threads:	1
+voluntary_ctxt_switches:	383
