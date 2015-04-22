@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     QList<QStandardItem *> listaItem;
     QStringList list, list_proc, list0;
-    QString qstr, qstr1, qstr_nome, qstr_pid, qstr_ppid, qstr_state, qstr_user, qstr_thread, qstr_cnt, display;
+    QString qstr, qstr1, qstr_nome, qstr_pid, qstr_ppid, qstr_state, qstr_user, qstr_thread, qstr_cnt, display, nome_sistema;
     string linha, str, path, _system, username;
     const char * c ;
     int count = 0, count_thread = 0;
@@ -212,9 +212,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     /* ------------------------------------------------------------------------- */
 
     //Informações do SO: Nome e Kernel
-    char buff[256];
-    //FILE *kernel = popen("uname -r","r");
-    //FILE *Name = popen("cat /etc/*-release | grep 'PRETTY_NAME'", "r");
 
     ifstream kernel;
     system("uname -r > kernel.txt");
@@ -235,6 +232,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         qstr = qstr.remove("\"");
         list = qstr.split("=");
         qstr = list[1];
+        nome_sistema = qstr;
         ui->label_11->setText("Sistema Operacional: " + qstr);
         name.close();
     }
@@ -278,9 +276,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
  /* ------------------------------------------------------------------------- */
 
      //Memória
-
-     //FILE *memram = popen("cat /proc/meminfo | grep 'MemTotal'","r");
-     //FILE *memswap = popen("cat /proc/meminfo | grep 'MemTotal'","r");
 
     double val;
 
@@ -326,7 +321,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
      //logo
 
-        ui ->label_6->setPixmap(QPixmap("/usr/share/pixmaps/ubuntu-logo.png", 0, Qt::AutoColor));
+        QString match = "Ubuntu", match1 = "ubuntu";
+        bool test1 = nome_sistema.contains(match);
+        bool test2 = nome_sistema.contains(match1);
+        if(test1 || test2) {
+            ui ->label_6->setPixmap(QPixmap("logos/ubuntu.png", 0, Qt::AutoColor));
+        }
 
 /* ----------------------------------------------------------------------------------------------------------- */
 
