@@ -1,7 +1,8 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 #include <QThread>
-
+#include <fstream>
+#include <string>
 
 class Graph: public QThread{
 Q_OBJECT
@@ -13,7 +14,7 @@ public:
 
 
 signals:
-    void updateGUI(int);
+    void updateGUI(QVector<float>);
 };
 
 

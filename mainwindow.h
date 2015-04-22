@@ -20,7 +20,7 @@ public:
     ~MainWindow();
 
 public slots:
-    void updateInterface(int);
+    void updateInterface(QVector<float>);
 
 private slots:
     void on_pushButton_clicked();

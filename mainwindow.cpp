@@ -329,43 +329,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
      //Processadores
 
-
+     qRegisterMetaType<QVector<float> >("QVector<float>");
      graph = new Graph();
-     connect(graph,SIGNAL(updateGUI(int)),SLOT(updateInterface(int)));
-    // graph->run();
-     //pclose(proc); // Não sei se devo fechar pq a thread vai ficar lendo o tempo todo
-
-     /*****************************************************************/
-     // Processos
-
-     FILE *ListaProcessos = popen("ps aux","r");
-
-     qstr = " ";
-     list.clear();
-     while ( fgets( buff, 256, ListaProcessos ) != NULL ) {
-         list.push_back(buff); // Cada linha tem um processo
-     }
-     cout<<endl;
-
-    QStringList processo; // Cada linha tem 1 proccesso do 'ps aux'
-    QVector<int> pid; //No final deste for, essa variavel terá todos os PID dos processos
-    for(int j = 0; j<list.size(); j++){
-        processo = list[j].split(" ");
-        int cont = 0;
-        for(int i = 0; i<processo.size(); i++){
-            if(processo[i].toStdString().length() != 0){ // Testo para saber se o valor é diferente de expaço
-                cont++;
-                if(cont == 2){// cont 1 = USER, cont 2 = PID
-                    if(processo[i].toInt()>0){
-                        pid.push_back(processo[i].toInt());
-                    }
-                    break;
-                }
-            }
-        }
-    }
-
-
+     connect(graph,SIGNAL(updateGUI(QVector<float>)),SLOT(updateInterface(QVector<float>)));
+     graph->start();
  }
 
 MainWindow::~MainWindow()
@@ -373,9 +340,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::updateInterface(int porcent){
-    ui->progressBar_1->setValue(porcent);
-    //cout<<porcent<<endl;
+void MainWindow::updateInterface(QVector<float> processadores){
+    ui->progressBar_1->setValue(processadores[0]);
+    ui->progressBar_2->setValue(processadores[1]);
+    ui->progressBar_3->setValue(processadores[2]);
+    ui->progressBar_4->setValue(processadores[3]);
 }
 
 void MainWindow::on_pushButton_clicked()
