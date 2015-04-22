@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.0
+** Created by: Qt User Interface Compiler version 5.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -80,6 +80,7 @@ public:
     QLabel *label_11;
     QLabel *label_12;
     QLabel *label_13;
+    QLabel *label_14;
     QPushButton *pushButton;
     QDial *dial;
     QLabel *label_2;
@@ -136,7 +137,7 @@ public:
         lineEdit_3->setGeometry(QRect(10, 140, 113, 20));
         layoutWidget = new QWidget(tab_2);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 11, 413, 132));
+        layoutWidget->setGeometry(QRect(10, 11, 413, 140));
         gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -255,26 +256,29 @@ public:
         tab_3->setObjectName(QStringLiteral("tab_3"));
         label_6 = new QLabel(tab_3);
         label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(-2, 60, 131, 51));
+        label_6->setGeometry(QRect(-2, 40, 131, 91));
         label_6->setAlignment(Qt::AlignCenter);
         label_7 = new QLabel(tab_3);
         label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setGeometry(QRect(140, 30, 341, 16));
+        label_7->setGeometry(QRect(140, 40, 341, 16));
         label_8 = new QLabel(tab_3);
         label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(140, 50, 301, 31));
+        label_8->setGeometry(QRect(140, 60, 291, 21));
         label_9 = new QLabel(tab_3);
         label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(140, 110, 631, 16));
+        label_9->setGeometry(QRect(140, 120, 631, 16));
         label_11 = new QLabel(tab_3);
         label_11->setObjectName(QStringLiteral("label_11"));
-        label_11->setGeometry(QRect(140, 70, 211, 31));
+        label_11->setGeometry(QRect(140, 80, 211, 21));
         label_12 = new QLabel(tab_3);
         label_12->setObjectName(QStringLiteral("label_12"));
         label_12->setGeometry(QRect(140, 130, 661, 51));
         label_13 = new QLabel(tab_3);
         label_13->setObjectName(QStringLiteral("label_13"));
-        label_13->setGeometry(QRect(140, 190, 651, 16));
+        label_13->setGeometry(QRect(140, 160, 651, 31));
+        label_14 = new QLabel(tab_3);
+        label_14->setObjectName(QStringLiteral("label_14"));
+        label_14->setGeometry(QRect(140, 180, 651, 31));
         tabWidget->addTab(tab_3, QString());
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
@@ -325,7 +329,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 848, 25));
+        menuBar->setGeometry(QRect(0, 0, 848, 20));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -364,6 +368,7 @@ public:
         label_11->setText(QApplication::translate("MainWindow", "Kernel do SO", 0));
         label_12->setText(QApplication::translate("MainWindow", "Informa\303\247\303\265es de Hardware (CPU, mem\303\263ria principal, mem\303\263ria secund\303\241ria dispon\303\255vel)", 0));
         label_13->setText(QApplication::translate("MainWindow", "Informa\303\247\303\265es de Hardware (CPU, mem\303\263ria principal, mem\303\263ria secund\303\241ria dispon\303\255vel)", 0));
+        label_14->setText(QApplication::translate("MainWindow", "Informa\303\247\303\265es de Hardware (CPU, mem\303\263ria principal, mem\303\263ria secund\303\241ria dispon\303\255vel)", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Sistema", 0));
         pushButton->setText(QApplication::translate("MainWindow", "Finalizar Processo", 0));
         label_2->setText(QApplication::translate("MainWindow", "Atualiza\303\247\303\243o", 0));
