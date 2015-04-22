@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QString qstr, qstr1, qstr_nome, qstr_pid, qstr_ppid, qstr_state, qstr_user, qstr_thread, qstr_cnt, display;
     string linha, str, path, _system, username;
     const char * c ;
-    int count = 0;
+    int count = 0, count_thread = 0;
 
 
 
@@ -121,6 +121,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                         qstr_thread = QString::fromStdString(linha);
                         qstr_thread.replace("Threads:", "");
                         qstr_thread = qstr_thread.trimmed();
+                        count_thread += qstr_thread.toInt();
                         file.close();
                     }
 
@@ -166,6 +167,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
             display = QString::number(count);
             ui->lcdNumber->display(display);
+            display = QString::number(count_thread);
+            ui->lcdNumber_2->display(display);
 
             }
         }
