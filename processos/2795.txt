@@ -1,7 +1,0 @@
-Name:	baloo_file
-State:	R (running)
-Pid:	2795
-PPid:	2331
-Uid:	1000	1000	1000	1000
-Threads:	2
-voluntary_ctxt_switches:	87534

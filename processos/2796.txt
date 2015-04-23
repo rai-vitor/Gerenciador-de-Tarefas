@@ -1,7 +1,0 @@
-Name:	plasma-desktop
-State:	S (sleeping)
-Pid:	2796
-PPid:	2331
-Uid:	1000	1000	1000	1000
-Threads:	5
-voluntary_ctxt_switches:	475883

@@ -1,7 +1,0 @@
-Name:	whoopsie
-State:	S (sleeping)
-Pid:	1385
-PPid:	1
-Uid:	109	109	109	109
-Threads:	3
-voluntary_ctxt_switches:	226

@@ -1,0 +1,4 @@
+cpu MHz		: 2200.000
+cpu MHz		: 2200.000
+cpu MHz		: 2200.000
+cpu MHz		: 2200.000

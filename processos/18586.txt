@@ -1,7 +1,0 @@
-Name:	dolphin
-State:	S (sleeping)
-Pid:	18586
-PPid:	2654
-Uid:	1000	1000	1000	1000
-Threads:	4
-voluntary_ctxt_switches:	1246

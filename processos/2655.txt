@@ -1,7 +1,0 @@
-Name:	klauncher
-State:	S (sleeping)
-Pid:	2655
-PPid:	2654
-Uid:	1000	1000	1000	1000
-Threads:	1
-voluntary_ctxt_switches:	1590

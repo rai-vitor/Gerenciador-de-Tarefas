@@ -6,6 +6,7 @@
 #include <QSplitter>
 #include <string>
 #include "graph.h"
+#include "proc.h"
 
 namespace Ui {
     class MainWindow;
@@ -22,6 +23,7 @@ public:
 
 public slots:
     void updateInterface(QVector<float>);
+    void updateTable(QStandardItemModel*);
 
 private slots:
     void on_pushButton_clicked();
@@ -34,6 +36,7 @@ private:
     QSplitter *splitter;
     float procTotal;
     Graph *graph;
+    proc *proc1;
 
 };
 

@@ -1,7 +1,0 @@
-Name:	kio_file
-State:	S (sleeping)
-Pid:	17209
-PPid:	2654
-Uid:	1000	1000	1000	1000
-Threads:	1
-voluntary_ctxt_switches:	27

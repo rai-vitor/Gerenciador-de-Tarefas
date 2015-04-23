@@ -1,7 +1,0 @@
-Name:	dbus-daemon
-State:	S (sleeping)
-Pid:	2479
-PPid:	2331
-Uid:	1000	1000	1000	1000
-Threads:	1
-voluntary_ctxt_switches:	43308

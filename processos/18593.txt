@@ -1,7 +1,0 @@
-Name:	kio_thumbnail
-State:	S (sleeping)
-Pid:	18593
-PPid:	2654
-Uid:	1000	1000	1000	1000
-Threads:	1
-voluntary_ctxt_switches:	215
