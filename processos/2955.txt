@@ -1,0 +1,7 @@
+Name:	nacl_helper
+State:	S (sleeping)
+Pid:	2955
+PPid:	2953
+Uid:	1000	1000	1000	1000
+Threads:	1
+voluntary_ctxt_switches:	20

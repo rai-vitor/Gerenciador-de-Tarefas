@@ -17,6 +17,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    std::string kill_process;
     ~MainWindow();
 
 public slots:
@@ -24,6 +25,8 @@ public slots:
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_tableView_activated(const QModelIndex &index);
 
 private:
     Ui::MainWindow *ui;

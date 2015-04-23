@@ -12,6 +12,8 @@
 
 using namespace std;
 
+string kill_process;
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
@@ -352,5 +354,18 @@ void MainWindow::updateInterface(QVector<float> processadores){
 
 void MainWindow::on_pushButton_clicked()
 {
-    graph->run();
+    kill_process = "kill -9 " + kill_process;
+    const char * command = kill_process.c_str();
+    //cout << command << endl;
+    system(command);
+}
+
+//Obtém valores do tableView
+
+void MainWindow::on_tableView_activated(const QModelIndex &index)
+{
+    //cout << index.row() << endl;
+    QString valor = ui->tableView->model()->data(index).toString();
+    kill_process = valor.toStdString();
+    cout << kill_process << endl;
 }

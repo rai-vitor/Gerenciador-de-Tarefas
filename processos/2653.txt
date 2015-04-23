@@ -1,0 +1,7 @@
+Name:	start_kdeinit
+State:	S (sleeping)
+Pid:	2653
+PPid:	2331
+Uid:	1000	1000	1000	1000
+Threads:	1
+voluntary_ctxt_switches:	98

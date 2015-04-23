@@ -1,0 +1,7 @@
+Name:	thermald
+State:	S (sleeping)
+Pid:	1307
+PPid:	1
+Uid:	0	0	0	0
+Threads:	2
+voluntary_ctxt_switches:	227

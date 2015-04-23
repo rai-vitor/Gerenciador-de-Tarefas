@@ -1,0 +1,7 @@
+Name:	ata_sff
+State:	S (sleeping)
+Pid:	45
+PPid:	2
+Uid:	0	0	0	0
+Threads:	1
+voluntary_ctxt_switches:	2

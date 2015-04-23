@@ -1,0 +1,7 @@
+Name:	avahi-daemon
+State:	S (sleeping)
+Pid:	1032
+PPid:	1031
+Uid:	110	110	110	110
+Threads:	1
+voluntary_ctxt_switches:	3

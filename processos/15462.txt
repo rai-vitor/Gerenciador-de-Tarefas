@@ -1,0 +1,7 @@
+Name:	gdb
+State:	S (sleeping)
+Pid:	15462
+PPid:	3279
+Uid:	1000	1000	1000	1000
+Threads:	1
+voluntary_ctxt_switches:	1403
